@@ -120,16 +120,18 @@ class Function {
     Logger.log('Successful compression code.');
 
     try {
-      await this.lambda('getFunction', { FunctionName: functionName });
-      // console.log('>>>>>>>>' + JSON.stringify(resp) + '<<<<<<<<');
       console.log('>>>>>>>> sleep 3s <<<<<<<<');
       await sleep(3000);
+      await this.lambda('getFunction', { FunctionName: functionName });
+      console.log('>>>>>>>>' + JSON.stringify(resp) + '<<<<<<<<');
+      console.log('>>>>>>>>' + JSON.stringify(resp) + '<<<<<<<<');
       await this.lambda('updateFunctionCode', {
         FunctionName: functionName,
         ZipFile: code.ZipFile
       });
       delete functionInput.Code;
       delete functionInput.CodeUri;
+      console.log('>>>>>>>> updateFunctionConfiguration <<<<<<<<');
       return await this.lambda('updateFunctionConfiguration', functionInput);
     } catch (e) {
       if (e.code === 'ResourceNotFoundException') {

@@ -2,9 +2,9 @@ Type: Component
 Name: shaoyun/lambda
 Provider:
   - AWS
-Version: 1.0.4
+Version: 1.0.5
 Description: 快速部署 Lambda 到 AWS
-HomePage: https://github.com/Serverless-Devs-Awesome/lambda-aws-component
+HomePage: https://github.com/shaoyun/lambda
 Tags:
   - AWS Lambda
   - 函数计算
