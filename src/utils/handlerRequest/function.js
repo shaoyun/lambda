@@ -120,8 +120,10 @@ class Function {
     Logger.log('Successful compression code.');
 
     try {
-      const resp = await this.lambda('getFunction', { FunctionName: functionName });
-      console.log('>>>>>>>>' + JSON.stringify(resp) + '<<<<<<<<');
+      await this.lambda('getFunction', { FunctionName: functionName });
+      // console.log('>>>>>>>>' + JSON.stringify(resp) + '<<<<<<<<');
+      console.log('>>>>>>>> sleep 3s <<<<<<<<');
+      await sleep(3000);
       await this.lambda('updateFunctionCode', {
         FunctionName: functionName,
         ZipFile: code.ZipFile
