@@ -2,7 +2,7 @@ Type: Component
 Name: shaoyun/lambda
 Provider:
   - AWS
-Version: 1.0.5
+Version: 1.0.6
 Description: 快速部署 Lambda 到 AWS
 HomePage: https://github.com/shaoyun/lambda
 Tags:
